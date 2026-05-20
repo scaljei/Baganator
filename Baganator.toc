@@ -34,6 +34,7 @@ Core\Initialize.lua
 Skins\Utilities.lua
 Skins\Initialize.lua
 Skins\Blizzard.lua
+Skins\BlizzardBlack.lua
 Skins\Dark.lua
 Skins\ElvUI.lua
 Skins\GW2.lua
