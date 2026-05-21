@@ -29,7 +29,7 @@ local skinners = {
     table.insert(allButtonFrames, frame)
     frame.Bg:Hide()
     frame.Bg = CreateFrame("Frame", nil, frame, "FlatPanelBackgroundTemplate")
-    frame.Bg:SetFrameLevel(0)
+    frame.Bg:SetFrameStrata("LOW")
     frame.Bg:SetPoint("TOPLEFT", 2, -3)
     frame.Bg:SetPoint("BOTTOMRIGHT", -2, 3)
 		NineSliceUtil.ApplyLayout(frame.NineSlice, layout, frame.NineSlice:GetFrameLayoutTextureKit());
