@@ -74,17 +74,17 @@ if addonTable.Constants.IsEra then
     {
       key = "projectile",
       name = C_Item.GetItemClassInfo(Enum.ItemClass.Projectile),
-      search = "#" .. C_Item.GetItemClassInfo(Enum.ItemClass.Projectile):lower(),
+      search = "#" .. (C_Item.GetItemClassInfo(Enum.ItemClass.Projectile) or ""):lower(),
     },
     {
       key = "quiver",
       name = C_Item.GetItemClassInfo(Enum.ItemClass.Quiver),
-      search = "#" .. C_Item.GetItemClassInfo(Enum.ItemClass.Quiver):lower(),
+      search = "#" .. (C_Item.GetItemClassInfo(Enum.ItemClass.Quiver) or ""):lower(),
     },
     {
       key = "key",
       name = C_Item.GetItemClassInfo(Enum.ItemClass.Key),
-      search = "#" .. (Syndicator.Locales.KEYWORD_KEY or Syndicator.Locales.KEYWORD_KEYRING),
+      search = "#" .. (Syndicator.Locales.KEYWORD_KEY or Syndicator.Locales.KEYWORD_KEYRING or ""),
       priorityOffset = -35,
     },
   }
@@ -113,18 +113,18 @@ elseif addonTable.Constants.IsClassic then -- Cata
     {
       key = "gem",
       name = C_Item.GetItemClassInfo(Enum.ItemClass.Gem),
-      search = "#" .. C_Item.GetItemClassInfo(Enum.ItemClass.Gem):lower(),
+      search = "#" .. (C_Item.GetItemClassInfo(Enum.ItemClass.Gem) or ""):lower(),
     },
     {
       key = "key",
       name = C_Item.GetItemClassInfo(Enum.ItemClass.Key),
-      search = "#" .. C_Item.GetItemClassInfo(Enum.ItemClass.Key):lower(),
+      search = "#" .. (C_Item.GetItemClassInfo(Enum.ItemClass.Key) or ""):lower(),
       priorityOffset = -35,
     },
     {
       key = "battlepet",
       name = TOOLTIP_BATTLE_PET,
-      search = "#" .. Syndicator.Locales.KEYWORD_BATTLE_PET,
+      search = "#" .. (Syndicator.Locales.KEYWORD_BATTLE_PET or ""),
       priorityOffset = -60,
     },
   }
@@ -157,57 +157,57 @@ else -- retail
     {
       key = "keystone",
       name = addonTable.Locales.CATEGORY_KEYSTONE,
-      search = "#" .. Syndicator.Locales.KEYWORD_KEYSTONE,
+      search = "#" .. (Syndicator.Locales.KEYWORD_KEYSTONE or ""),
       priorityOffset = -40,
     },
     {
       key = "potion",
       name = addonTable.Locales.CATEGORY_POTION,
-      search = "#" .. Syndicator.Locales.KEYWORD_POTION,
+      search = "#" .. (Syndicator.Locales.KEYWORD_POTION or ""),
       priorityOffset = -40,
     },
     {
       key = "food",
       name = addonTable.Locales.CATEGORY_FOOD,
-      search = "#" .. Syndicator.Locales.KEYWORD_FOOD,
+      search = "#" .. (Syndicator.Locales.KEYWORD_FOOD or ""),
       priorityOffset = -40,
     },
     {
       key = "consumable",
       name = C_Item.GetItemClassInfo(Enum.ItemClass.Consumable),
-      search = "#" .. C_Item.GetItemClassInfo(Enum.ItemClass.Consumable):lower(),
+      search = "#" .. (C_Item.GetItemClassInfo(Enum.ItemClass.Consumable) or ""):lower(),
     },
     {
       key = "gem",
       name = C_Item.GetItemClassInfo(Enum.ItemClass.Gem),
-      search = "#" .. C_Item.GetItemClassInfo(Enum.ItemClass.Gem):lower(),
+      search = "#" .. (C_Item.GetItemClassInfo(Enum.ItemClass.Gem) or ""):lower(),
     },
     {
       key = "itemenhancement",
       name = C_Item.GetItemClassInfo(Enum.ItemClass.ItemEnhancement),
-      search = "#" .. C_Item.GetItemClassInfo(Enum.ItemClass.ItemEnhancement):lower(),
+      search = "#" .. (C_Item.GetItemClassInfo(Enum.ItemClass.ItemEnhancement) or ""):lower(),
     },
     {
       key = "profession",
       name = C_Item.GetItemClassInfo(Enum.ItemClass.Profession),
-      search = "#" .. C_Item.GetItemClassInfo(Enum.ItemClass.Profession):lower(),
+      search = "#" .. (C_Item.GetItemClassInfo(Enum.ItemClass.Profession) or ""):lower(),
     },
     {
       key = "key",
       name = C_Item.GetItemClassInfo(Enum.ItemClass.Key),
-      search = "#" .. C_Item.GetItemClassInfo(Enum.ItemClass.Key):lower(),
+      search = "#" .. (C_Item.GetItemClassInfo(Enum.ItemClass.Key) or ""):lower(),
       priorityOffset = -35,
     },
     {
       key = "battlepet",
       name = C_Item.GetItemClassInfo(Enum.ItemClass.Battlepet),
-      search = "#" .. Syndicator.Locales.KEYWORD_BATTLE_PET,
+      search = "#" .. (Syndicator.Locales.KEYWORD_BATTLE_PET or ""),
       priorityOffset = -60,
     },
     {
       key = "toy",
       name = TOY,
-      search = "#" .. TOY:lower(),
+      search = "#" .. (TOY or ""):lower(),
       priorityOffset = -20,
     },
   }
@@ -217,18 +217,18 @@ tAppendAll(addonTable.CategoryViews.Constants.DefaultCategories, {
   {
     key = "hearthstone",
     name = addonTable.Locales.CATEGORY_HEARTHSTONE,
-    search = addonTable.Locales.CATEGORY_HEARTHSTONE:lower() .. "&#" .. ITEM_UNIQUE:lower() .. "&#" .. ITEM_SOULBOUND:lower(),
+    search = addonTable.Locales.CATEGORY_HEARTHSTONE:lower() .. "&#" .. (ITEM_UNIQUE or ""):lower() .. "&#" .. (ITEM_SOULBOUND or ""):lower(),
     priorityOffset = -10,
   },
   {
     key = "consumable",
     name = C_Item.GetItemClassInfo(Enum.ItemClass.Consumable),
-    search = "#" .. C_Item.GetItemClassInfo(Enum.ItemClass.Consumable):lower(),
+    search = "#" .. (C_Item.GetItemClassInfo(Enum.ItemClass.Consumable) or ""):lower(),
   },
   {
     key = "reagent",
     name = C_Item.GetItemClassInfo(Enum.ItemClass.Reagent),
-    search = "#" .. Syndicator.Locales.KEYWORD_REAGENT,
+    search = "#" .. (Syndicator.Locales.KEYWORD_REAGENT or ""),
     priorityOffset = -50,
   },
   {
@@ -240,37 +240,37 @@ tAppendAll(addonTable.CategoryViews.Constants.DefaultCategories, {
   {
     key = "weapon",
     name = C_Item.GetItemClassInfo(Enum.ItemClass.Weapon),
-    search = "#" .. C_Item.GetItemClassInfo(Enum.ItemClass.Weapon):lower(),
+    search = "#" .. (C_Item.GetItemClassInfo(Enum.ItemClass.Weapon) or ""):lower(),
   },
   {
     key = "armor",
     name = C_Item.GetItemClassInfo(Enum.ItemClass.Armor),
-    search = "#" .. C_Item.GetItemClassInfo(Enum.ItemClass.Armor):lower() .. "&#" .. Syndicator.Locales.KEYWORD_GEAR,
+    search = "#" .. (C_Item.GetItemClassInfo(Enum.ItemClass.Armor) or ""):lower() .. "&#" .. (Syndicator.Locales.KEYWORD_GEAR or ""),
   },
   {
     key = "container",
     name = addonTable.Locales.CATEGORY_BAG,
-    search = "#" .. C_Item.GetItemClassInfo(Enum.ItemClass.Container):lower(),
+    search = "#" .. (C_Item.GetItemClassInfo(Enum.ItemClass.Container) or ""):lower(),
   },
   {
     key = "tradegoods",
     name = C_Item.GetItemClassInfo(Enum.ItemClass.Tradegoods),
-    search = "#" .. C_Item.GetItemClassInfo(Enum.ItemClass.Tradegoods):lower(),
+    search = "#" .. (C_Item.GetItemClassInfo(Enum.ItemClass.Tradegoods) or ""):lower(),
   },
   {
     key = "recipe",
     name = C_Item.GetItemClassInfo(Enum.ItemClass.Recipe),
-    search = "#" .. C_Item.GetItemClassInfo(Enum.ItemClass.Recipe):lower(),
+    search = "#" .. (C_Item.GetItemClassInfo(Enum.ItemClass.Recipe) or ""):lower(),
   },
   {
     key = "questitem",
     name = C_Item.GetItemClassInfo(Enum.ItemClass.Questitem),
-    search = "#" .. C_Item.GetItemClassInfo(Enum.ItemClass.Questitem):lower(),
+    search = "#" .. (C_Item.GetItemClassInfo(Enum.ItemClass.Questitem) or ""):lower(),
   },
   {
     key = "miscellaneous",
     name = C_Item.GetItemClassInfo(Enum.ItemClass.Miscellaneous),
-    search = "#" .. C_Item.GetItemClassInfo(Enum.ItemClass.Miscellaneous):lower(),
+    search = "#" .. (C_Item.GetItemClassInfo(Enum.ItemClass.Miscellaneous) or ""):lower(),
     priorityOffset = -30,
   },
   {
@@ -282,7 +282,7 @@ tAppendAll(addonTable.CategoryViews.Constants.DefaultCategories, {
   {
     key = "junk",
     name = addonTable.Locales.CATEGORY_JUNK,
-    search = "#" .. Syndicator.Locales.KEYWORD_JUNK,
+    search = "#" .. (Syndicator.Locales.KEYWORD_JUNK or ""),
     priorityOffset = -15,
   },
 
