@@ -84,7 +84,7 @@ if addonTable.Constants.IsEra or addonTable.Constants.IsBC or addonTable.Constan
     {
       key = "key",
       name = C_Item.GetItemClassInfo(Enum.ItemClass.Key),
-      search = "#" .. (Syndicator.Locales.KEYWORD_KEY or Syndicator.Locales.KEYWORD_KEYRING),
+      search = "#" .. (Syndicator.Locales.KEYWORD_KEY or Syndicator.Locales.KEYWORD_KEYRING or ""),
       priorityOffset = -35,
     },
   }
@@ -134,7 +134,7 @@ elseif addonTable.Constants.IsClassic then -- Cata
     {
       key = "battlepet",
       name = TOOLTIP_BATTLE_PET,
-      search = "#" .. Syndicator.Locales.KEYWORD_BATTLE_PET,
+      search = "#" .. (Syndicator.Locales.KEYWORD_BATTLE_PET or ""),
       priorityOffset = -60,
     },
   }
@@ -167,19 +167,19 @@ else -- retail
     {
       key = "keystone",
       name = addonTable.Locales.CATEGORY_KEYSTONE,
-      search = "#" .. Syndicator.Locales.KEYWORD_KEYSTONE,
+      search = "#" .. (Syndicator.Locales.KEYWORD_KEYSTONE or ""),
       priorityOffset = -40,
     },
     {
       key = "potion",
       name = addonTable.Locales.CATEGORY_POTION,
-      search = "#" .. Syndicator.Locales.KEYWORD_POTION,
+      search = "#" .. (Syndicator.Locales.KEYWORD_POTION or ""),
       priorityOffset = -40,
     },
     {
       key = "food",
       name = addonTable.Locales.CATEGORY_FOOD,
-      search = "#" .. Syndicator.Locales.KEYWORD_FOOD,
+      search = "#" .. (Syndicator.Locales.KEYWORD_FOOD or ""),
       priorityOffset = -40,
     },
     {
@@ -211,13 +211,13 @@ else -- retail
     {
       key = "battlepet",
       name = C_Item.GetItemClassInfo(Enum.ItemClass.Battlepet),
-      search = "#" .. Syndicator.Locales.KEYWORD_BATTLE_PET,
+      search = "#" .. (Syndicator.Locales.KEYWORD_BATTLE_PET or ""),
       priorityOffset = -60,
     },
     {
       key = "toy",
       name = TOY,
-      search = "#" .. TOY:lower(),
+      search = "#" .. (TOY or ""):lower(),
       priorityOffset = -20,
     },
     {
@@ -233,7 +233,7 @@ tAppendAll(addonTable.CategoryViews.Constants.DefaultCategories, {
   {
     key = "hearthstone",
     name = addonTable.Locales.CATEGORY_HEARTHSTONE,
-    search = addonTable.Locales.CATEGORY_HEARTHSTONE:lower() .. "&#" .. ITEM_UNIQUE:lower() .. "&#" .. ITEM_SOULBOUND:lower(),
+    search = (addonTable.Locales.CATEGORY_HEARTHSTONE or ""):lower() .. "&#" .. (ITEM_UNIQUE or ""):lower() .. "&#" .. (ITEM_SOULBOUND or ""):lower(),
     priorityOffset = -10,
   },
   {
@@ -244,7 +244,7 @@ tAppendAll(addonTable.CategoryViews.Constants.DefaultCategories, {
   {
     key = "reagent",
     name = C_Item.GetItemClassInfo(Enum.ItemClass.Reagent),
-    search = "#" .. Syndicator.Locales.KEYWORD_REAGENT,
+    search = "#" .. (Syndicator.Locales.KEYWORD_REAGENT or ""),
     priorityOffset = -50,
   },
   {
@@ -261,7 +261,7 @@ tAppendAll(addonTable.CategoryViews.Constants.DefaultCategories, {
   {
     key = "armor",
     name = C_Item.GetItemClassInfo(Enum.ItemClass.Armor),
-    search = "#" .. (C_Item.GetItemClassInfo(Enum.ItemClass.Armor) or ""):lower() .. "&#" .. Syndicator.Locales.KEYWORD_GEAR,
+    search = "#" .. (C_Item.GetItemClassInfo(Enum.ItemClass.Armor) or ""):lower() .. "&#" .. (Syndicator.Locales.KEYWORD_GEAR or ""),
   },
   {
     key = "container",
@@ -287,7 +287,7 @@ tAppendAll(addonTable.CategoryViews.Constants.DefaultCategories, {
   {
     key = "miscellaneous",
     name = C_Item.GetItemClassInfo(Enum.ItemClass.Miscellaneous),
-    search = "#" .. (C_Item.GetItemClassInfo(Enum.ItemClass.Miscellaneous) or ""):lower() .. "&!#" .. Syndicator.Locales.KEYWORD_GEAR,
+    search = "#" .. (C_Item.GetItemClassInfo(Enum.ItemClass.Miscellaneous) or ""):lower() .. "&!#" .. (Syndicator.Locales.KEYWORD_GEAR or ""),
     priorityOffset = -30,
   },
   {
@@ -299,7 +299,7 @@ tAppendAll(addonTable.CategoryViews.Constants.DefaultCategories, {
   {
     key = "junk",
     name = addonTable.Locales.CATEGORY_JUNK,
-    search = "#" .. Syndicator.Locales.KEYWORD_JUNK,
+    search = "#" .. (Syndicator.Locales.KEYWORD_JUNK or ""),
     priorityOffset = -15,
   },
 
